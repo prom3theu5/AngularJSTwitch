@@ -1,0 +1,9 @@
+﻿.jumbotron{
+    background-image:url(../images/background.gif);
+    background-size:cover;
+    color:white;
+}
+.row{
+    margin-top:10px;
+    margin-bottom:10px;
+}

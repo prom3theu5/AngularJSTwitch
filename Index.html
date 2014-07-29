@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>GW2 Streams Example</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+</head>
+<body>
+        <div class="jumbotron">
+            <h2>Example of Twitch Streams Loaded in AngularJS</h2>
+            <small>Loaded via Twitch.tv including an auto refresh of 15 seconds, and a html to plain text conversion :)</small>
+        </div>
+    <div class="container-fluid">
+        <div id='content' ng-app="TwitchAngularGW2" ng-controller="MainController">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div ng-repeat="Stream in Streams.response.streams">
+                        <div class="col-lg-3">
+                                <a href="http://www.twitch.tv/{{Stream.channel.display_name}}" target="_blank">
+                                    <h4>{{Stream.channel.display_name | htmlToPlaintext}}</h4>
+                                </a>
+                                <p>{{Stream.channel.status | htmlToPlaintext}}</p>
+                                <img ng-src="{{Stream.preview.medium}}" width="320" height="200" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/maincontroller.js"></script>
+    <script src="app/filters.js"></script>
+</body>
+</html>
